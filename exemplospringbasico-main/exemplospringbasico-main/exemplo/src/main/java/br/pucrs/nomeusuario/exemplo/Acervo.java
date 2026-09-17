@@ -60,5 +60,17 @@ public class Acervo {
                    .orElse(null);   
             return resp;
         }
+    public boolean removeLivrosDoAno(int ano) {
+    boolean removeu = false;
+    Iterator<Livro> it = livros.iterator();
+    while (it.hasNext()) {
+        Livro livro = it.next();
+        if (livro.getAno() == ano) {
+            it.remove();
+            removeu = true;
+        }
+    }
+    return removeu;
+}
 
 }

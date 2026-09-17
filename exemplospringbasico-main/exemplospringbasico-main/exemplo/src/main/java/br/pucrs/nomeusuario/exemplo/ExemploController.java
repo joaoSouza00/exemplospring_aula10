@@ -64,5 +64,9 @@ public class ExemploController {
                     .status(HttpStatus.OK)
                     .body(livro);
         }
+    @DeleteMapping("/removelivrosano/{ano}")
+public boolean removeLivrosAno(@PathVariable(value = "ano") int ano) {
+    return acervo.removeLivrosDoAno(ano);
+}
 
 }
